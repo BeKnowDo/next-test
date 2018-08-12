@@ -1,0 +1,45 @@
+{
+  "name": "bkd-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pages/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node scripts/seeder.js --products=50 --quiet=true",
+    "server": "node ./next-server",
+    "api": "nodemon -e js server",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grid-styled": "^5.0.2",
+    "next": "^6.1.1",
+    "nprogress": "^0.2.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^3.4.2"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "chalk": "^2.4.1",
+    "clear-console": "^1.1.0",
+    "command-line-args": "^5.0.2",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-react": "^7.10.0",
+    "express": "^4.16.3",
+    "faker": "^4.1.0",
+    "fs-extra": "^7.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "mkdirp": "^0.5.1",
+    "nocache": "^2.0.0",
+    "nodemon": "^1.18.3"
+  }
+}
