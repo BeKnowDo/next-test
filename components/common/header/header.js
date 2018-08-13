@@ -1,9 +1,9 @@
-import Navigation from '../../common/navigation';
+import Navigation from "../../common/navigation";
 
 const Header = () => (
-    <header>
-        <Navigation />
-    </header>
+  <header>
+    <Navigation />
+  </header>
 );
 
 export default Header;

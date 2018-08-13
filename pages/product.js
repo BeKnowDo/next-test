@@ -4,7 +4,7 @@ import { Flex } from "grid-styled";
 const Product = withRouter(props => {
   return (
     <Flex is="ul" flexWrap="wrap" alignItems="center">
-      {props.router.query.name}
+      {props.router.query.id}
     </Flex>
   );
 });

@@ -18,8 +18,8 @@ const ProductTile = props => {
       <Wrapper>
         <h3>
           <Link
-            href={`/product?name=${props.category_id}`}
             as={`/product/${props.category_id}`}
+            href={`/product?id=${props.category_id}`}
           >
             <a>{props.name}</a>
           </Link>

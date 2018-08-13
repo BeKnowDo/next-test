@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import styled from 'styled-components';
-import { colors, padding } from '../../../styles/variables';
+import Link from "next/link";
+import styled from "styled-components";
+import { colors, padding } from "../../../styles/variables";
 
 const Nav = styled.nav`
   background-color: ${colors.grey};
@@ -10,36 +10,32 @@ const Nav = styled.nav`
     list-style-type: none;
     padding: 0;
     margin: 0;
-    
+
     li {
-      
     }
-    
+
     a {
       display: inline-block;
       padding: ${padding.nav.linkPadding};
       color: ${colors.white};
       text-decoration: none;
     }
-    
   }
-  
 `;
 
-
 export const Navigation = () => (
-    <Nav>
-        <ul>
-            <li>
-                <Link href="/">
-                    <a>Home</a>
-                </Link>
-            </li>
-            <li>
-                <Link href="/about">
-                    <a>About</a>
-                </Link>
-            </li>
-        </ul>
-    </Nav>
+  <Nav>
+    <ul>
+      <li>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </li>
+    </ul>
+  </Nav>
 );
