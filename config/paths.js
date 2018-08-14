@@ -4,13 +4,17 @@ const API_DETAILS = {
 };
 
 const dummyDirectory = "dummy-data";
+const webhose = "webhose";
 
 module.exports = {
   API: {
-    products: `${API_DETAILS.SERVER}:${API_DETAILS.PORT}/api/products`
+    products: `${API_DETAILS.SERVER}:${API_DETAILS.PORT}/api/products`,
+    product: `${API_DETAILS.SERVER}:${API_DETAILS.PORT}/api/product`
   },
+
   dataPaths: {
     dummydata: `${dummyDirectory}`,
+    webhose: `${webhose}`,
     products: `${dummyDirectory}/products.json`
   }
 };

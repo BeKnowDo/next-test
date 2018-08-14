@@ -12,7 +12,7 @@ const Home = ({ products }) => {
   );
 };
 
-Home.getInitialProps = async ({ req }) => {
+Home.getInitialProps = async () => {
   const results = await fetch(API.products);
   const products = await results.json();
 

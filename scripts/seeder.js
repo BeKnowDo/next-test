@@ -36,8 +36,6 @@ const creatProducts = () => {
     "Tools and Accessories"
   ];
 
-  let o;
-
   categoryTitles.forEach(category => {
     log({ name: category });
 
