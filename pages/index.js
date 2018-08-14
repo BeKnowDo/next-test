@@ -36,7 +36,7 @@ const buildList = products => {
             name={product.name}
             description={product.description}
             price={product.price}
-            category_id={product.categoryID}
+            id={product.id}
           />
         );
       })}

@@ -27,18 +27,28 @@ router.get("/products", (req, res, next) => {
 });
 
 // Get products
-router.get("/product", (req, res, next) => {
+router.get("/product/:id", (req, res, next) => {
   const productPath = fs.existsSync(pathConfig.dataPaths.webhose.products);
 
   if (productPath) {
     const contents = JSON.parse(
-      fs.readFileSync(pathConfig.dataPaths.products, {
+      fs.readFileSync(pathConfig.dataPaths.webhose.products, {
         encoding: "utf-8",
         flag: "rs+"
       })
     );
 
-    res.json(contents);
+    // clear();
+
+    const result = contents.find(item => {
+      if (item.id === req.params.id) {
+        // log(item.id);
+        // log(req.params.id);
+        return item;
+      }
+    });
+
+    res.json(result);
   } else {
     res.json({ notification: `Couldn't find requested products` });
   }

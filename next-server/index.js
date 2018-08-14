@@ -11,15 +11,9 @@ app
     const server = express();
 
     // custom handlers go here…
-    // server.get("/product/:slug", (req, res) => {
-    //   const { slug } = req.params;
-    //   app.render(req, res, "/product", { slug });
-    // });
-
-    // custom handlers go here…
     server.get("/product/:id", (req, res) => {
       const actualPage = "/product";
-      const queryParams = { id: req.params.id };
+      const queryParams = { title: req.params.id };
       app.render(req, res, actualPage, queryParams);
     });
 

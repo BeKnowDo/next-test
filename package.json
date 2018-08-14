@@ -9,7 +9,7 @@
     "webhose-seeder": "node scripts/webhose-seeder.js",
     "server": "node ./next-server",
     "api": "nodemon -e js api",
-    "dev": "next",
+    "dev": "npm run server",
     "build": "next build",
     "start": "next start"
   },

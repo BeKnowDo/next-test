@@ -17,10 +17,7 @@ const ProductTile = props => {
     <Box {...props} color="inherit">
       <Wrapper>
         <h3>
-          <Link
-            as={`/product/${props.category_id}`}
-            href={`/product?id=${props.category_id}`}
-          >
+          <Link as={`/product/${props.id}`} href={`/product?id=${props.id}`}>
             <a>{props.name}</a>
           </Link>
         </h3>

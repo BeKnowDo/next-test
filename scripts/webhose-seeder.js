@@ -44,7 +44,14 @@ const creatProducts = () => {
       const price = product.price;
       const brand = product.brand;
       const image = product.images;
-      const colors = products.colors;
+      const colors = product.colors;
+      const rating = {
+        aggregated: product.aggregated_rating,
+        best: product.best_rating,
+        worse: product.worst_rating,
+        count: product.count,
+        reviews: product.reviews_count
+      };
 
       const history = {
         updated: product.last_changed,
@@ -61,10 +68,11 @@ const creatProducts = () => {
         brand,
         image,
         colors,
+        rating,
         history
       };
 
-      log(result);
+      // log(result);
 
       products.push(result);
     });
