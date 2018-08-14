@@ -1,15 +1,17 @@
 import Head from "next/head";
 import { Component } from "react";
-import { API } from "../config/paths";
-
 import { Flex, Box } from "grid-styled";
+import fetch from "isomorphic-fetch";
+import { API } from "../config/paths";
 
 class ProductPage extends Component {
   static async getInitialProps({ query }) {
     console.log(query);
 
-    const results = await fetch(`${API.product}/${query.id}`);
-    const product = await results.json();
+    const result = await fetch(`${API.product}/${query.id}`);
+    const product = await result.json();
+
+    console.log(product);
 
     return {
       product

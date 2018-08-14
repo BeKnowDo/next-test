@@ -2,8 +2,8 @@ const fs = require("fs-extra");
 const express = require("express");
 const pathConfig = require("../../config/paths");
 
-// const clear = require("clear-console");
-// const log = console.log;
+const clear = require("clear-console");
+const log = console.log;
 
 // Initialize our express router
 const router = express.Router();
@@ -38,7 +38,8 @@ router.get("/product/:id", (req, res, next) => {
       })
     );
 
-    // clear();
+    clear();
+    console.log(req.params);
 
     const result = contents.find(item => {
       if (item.id === req.params.id) {
@@ -48,7 +49,11 @@ router.get("/product/:id", (req, res, next) => {
       }
     });
 
-    res.json(result);
+    if (result) {
+      res.json(result);
+    } else {
+      res.json({ notification: `Couldn't find requested products` });
+    }
   } else {
     res.json({ notification: `Couldn't find requested products` });
   }
