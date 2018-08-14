@@ -14,7 +14,10 @@ module.exports = {
 
   dataPaths: {
     dummydata: `${dummyDirectory}`,
-    webhose: `${webhose}`,
+    webhose: {
+      seedTarget: `${webhose}`,
+      products: `${webhose}/products.json`
+    },
     products: `${dummyDirectory}/products.json`
   }
 };

@@ -10,11 +10,11 @@ const router = express.Router();
 
 // Get products
 router.get("/products", (req, res, next) => {
-  const productPath = fs.existsSync(pathConfig.dataPaths.products);
+  const productPath = fs.existsSync(pathConfig.dataPaths.webhose.products);
 
   if (productPath) {
     const contents = JSON.parse(
-      fs.readFileSync(pathConfig.dataPaths.products, {
+      fs.readFileSync(pathConfig.dataPaths.webhose.products, {
         encoding: "utf-8",
         flag: "rs+"
       })
@@ -28,7 +28,7 @@ router.get("/products", (req, res, next) => {
 
 // Get products
 router.get("/product", (req, res, next) => {
-  const productPath = fs.existsSync(pathConfig.dataPaths.products);
+  const productPath = fs.existsSync(pathConfig.dataPaths.webhose.products);
 
   if (productPath) {
     const contents = JSON.parse(

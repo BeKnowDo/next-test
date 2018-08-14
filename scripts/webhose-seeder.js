@@ -11,7 +11,7 @@ const log = console.log;
 // If not...create them
 
 const checkDirectories = async () => {
-  await mkdirp(`${pathConfig.dataPaths.webhose}`, function(err) {
+  await mkdirp(`${pathConfig.dataPaths.webhose.seedTarget}`, function(err) {
     if (err) console.error(err);
     else {
       log("Dummy data directories good to go!");
@@ -33,13 +33,49 @@ const creatProducts = () => {
 
   client.query("productFilter", query_params).then(output => {
     output["products"].map(product => {
-      log(product.name);
+      const source = {
+        site: product.source.site,
+        section: product.source.site_section
+      };
+      const category = product.categories;
+      const id = product.uuid;
+      const name = product.name;
+      const description = product.description;
+      const price = product.price;
+      const brand = product.brand;
+      const image = product.images;
+      const colors = products.colors;
+
+      const history = {
+        updated: product.last_changed,
+        crawled: product.crawled
+      };
+
+      const result = {
+        source,
+        category,
+        id,
+        name,
+        description,
+        price,
+        brand,
+        image,
+        colors,
+        history
+      };
+
+      log(result);
+
+      products.push(result);
     });
+
+    const finalProducts = JSON.stringify(products);
+
+    fs.writeFileSync(
+      `${pathConfig.dataPaths.webhose.seedTarget}/products.json`,
+      finalProducts
+    );
   });
-
-  const finalProducts = JSON.stringify(products);
-
-  fs.writeFileSync(`${pathConfig.dataPaths.webhose}/products.json`, products);
 };
 
 checkDirectories();
